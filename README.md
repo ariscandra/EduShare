@@ -1,4 +1,3 @@
-<a name="top"></a>
 <img src="https://github.com/user-attachments/assets/ea632656-6bb6-4c2d-a4c8-15baa6bf9137" alt="Header Atas" width="100%">
 
 <p align="center"><strong>
@@ -21,7 +20,7 @@
 
 | Ahmad Sepriza | Ahmad Dani | Aris Candra Muzaffar | Moreno Ferdinand Farhantino |
 |----------------------|----------------------------|----------------|----------------|
-| **NIM:** 2409116025 <br> **Kelas:** Sistem Informasi A '24 <br> [![Riza](https://img.shields.io/badge/-Riza-FFFFFF?logo=github&logoColor=black)](https://github.com/ariscandra) &nbsp; &nbsp; | **NIM:** 2409116074 <br> **Kelas:** Sistem Informasi B '24 <br> [![Dani](https://img.shields.io/badge/-Dani-FFFFFF?logo=github&logoColor=black)](https://github.com/Zxrov) &nbsp; &nbsp; | **NIM:** 2409116088 <br> **Kelas:** Sistem Informasi C '24 <br> [![Aris](https://img.shields.io/badge/-Aris-FFFFFF?logo=github&logoColor=black)](https://github.com/MuhammadRafly12) &nbsp; &nbsp; | **NIM:** 2409116097 <br> **Kelas:** Sistem Informasi C '24 <br> [![Moreno](https://img.shields.io/badge/-Moreno-FFFFFF?logo=github&logoColor=black)](https://github.com/MuhammadRafly12) |
+| **NIM:** 2409116025 <br> **Kelas:** Sistem Informasi A '24 <br> [![Riza](https://img.shields.io/badge/-Riza-FFFFFF?logo=github&logoColor=black)](https://github.com/ahmadsepriza) &nbsp; &nbsp; | **NIM:** 2409116074 <br> **Kelas:** Sistem Informasi B '24 <br> [![Dani](https://img.shields.io/badge/-Dani-FFFFFF?logo=github&logoColor=black)](https://github.com/ahmddanii) &nbsp; &nbsp; | **NIM:** 2409116088 <br> **Kelas:** Sistem Informasi C '24 <br> [![Aris](https://img.shields.io/badge/-Aris-FFFFFF?logo=github&logoColor=black)](https://github.com/ariscandra) &nbsp; &nbsp; | **NIM:** 2409116097 <br> **Kelas:** Sistem Informasi C '24 <br> [![Moreno](https://img.shields.io/badge/-Moreno-FFFFFF?logo=github&logoColor=black)](https://github.com/MorenoEndo) |
 
 </div>
 
@@ -45,10 +44,10 @@ EduShare hadir sebagai platform yang:
 
 Program ini dikembangkan menggunakan:
 - **Bahasa Pemrograman**: Java dengan paradigma Object-Oriented Programming (OOP)
-- **GUI Framework**: Java Swing dengan FlatLaf untuk tampilan modern
+- **GUI Framework**: Java Swing
 - **Database**: MySQL untuk penyimpanan data persisten
 - **ORM**: JPA/Hibernate untuk mapping object-relational
-- **Arsitektur**: Model-View-Controller (MVC) yang memisahkan logic bisnis, tampilan, dan kontrol data
+- **Arsitektur**: Model-View-Controller (MVC) yang memisahkan logika bisnis, tampilan, dan kontrol data
 
 ### Tujuan Program
 
@@ -717,7 +716,7 @@ public class DonaturDAOImpl extends GenericDAOImpl<Donatur, Integer> implements 
   - `model/Donatur.java` - baris 35-38 (override `getRole()`)
   - `model/PihakSekolah.java` - baris 45-48 (override `getRole()`)
 
-- **Polymorphic Usage:**
+- **Penggunaan Polymorphis:**
   - `service/AuthenticationService.java` - baris 35-75 (method `login()`)
   - `service/AuthenticationService.java` - baris 85-105 (type checking methods)
   - `view/auth/LoginForm.java` - baris 95-115 (dynamic dashboard loading)
@@ -806,7 +805,7 @@ public interface GenericDAO<T, ID> {
 }
 ```
 
-**B. Interface untuk Entity-Specific Operations:**
+**B. Interface untuk Operasi Entity yang Spesifik:**
 
 **Interface `PenggunaDAO`:**
 
@@ -1013,14 +1012,14 @@ public class AdminDAOImpl extends GenericDAOImpl<Admin, Integer>
 
 **Distribusi Penerapan OOP:**
 
-- **Model Layer** (100%): Semua lima pilar OOP
+- **Model Layer** (Semua): Semua lima pilar OOP
   - Encapsulation: Semua attributes private
   - Inheritance: Hierarki Pengguna
   - Abstraction: Abstract class Pengguna
   - Polymorphism: Override methods
   - Interface: Implements Serializable
 
-- **DAO Layer** (100%): Semua lima pilar OOP
+- **DAO Layer** (Semua): Semua lima pilar OOP
   - Encapsulation: Protected EntityManager
   - Inheritance: Extends GenericDAOImpl
   - Abstraction: Abstract GenericDAOImpl
@@ -1161,7 +1160,7 @@ src/
 
 **1. `conf/` dan `META-INF/`**
 - Berisi file konfigurasi JPA/Hibernate
-- `persistence.xml` mendefinisikan koneksi database dan entity classes
+- `persistence.xml` mendefinisikan koneksi database dan class-class entity
 
 **2. `controller/`**
 - Mengatur alur kontrol aplikasi
@@ -1207,65 +1206,9 @@ src/
 <details>
 <summary><strong>Klik untuk melihat diagram arsitektur</strong></summary>
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         VIEW LAYER                          │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │  Login   │  │Dashboard │  │ Dialog   │  │  Panel   │   │
-│  │  Form    │  │  Forms   │  │ Windows  │  │Components│   │
-│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘   │
-└───────┼─────────────┼─────────────┼─────────────┼──────────┘
-        │             │             │             │
-        └─────────────┴─────────────┴─────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│                     CONTROLLER LAYER                        │
-│              ┌────────────────────────┐                     │
-│              │   AuthController       │                     │
-│              │   (Routing & Control)  │                     │
-│              └───────────┬────────────┘                     │
-└────────────────────────────┼───────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      SERVICE LAYER                          │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │ Authentication│  │   Donasi     │  │  Kebutuhan   │     │
-│  │   Service    │  │   Service    │  │   Service    │     │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘     │
-└─────────┼──────────────────┼──────────────────┼────────────┘
-          │                  │                  │
-          └──────────────────┴──────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────────┐
-│                       DAO LAYER                             │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │ PenggunaDAO  │  │  DonasiDAO   │  │ KebutuhanDAO │     │
-│  │    Impl      │  │    Impl      │  │    Impl      │     │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘     │
-└─────────┼──────────────────┼──────────────────┼────────────┘
-          │                  │                  │
-          └──────────────────┴──────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      MODEL LAYER                            │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │Pengguna  │  │ Sekolah  │  │Kebutuhan │  │ Donasi   │   │
-│  │ Entity   │  │ Entity   │  │ Entity   │  │ Entity   │   │
-│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘   │
-└───────┼─────────────┼─────────────┼─────────────┼──────────┘
-        │             │             │             │
-        └─────────────┴─────────────┴─────────────┘
-                          │
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  DATABASE (MySQL)                           │
-│         JPA/Hibernate EntityManager                         │
-└─────────────────────────────────────────────────────────────┘
-```
+<div align="center">
+<img src="https://github.com/user-attachments/assets/aa52f730-14bc-44f6-ac7d-f2e19666d587" alt="Header Atas" width="100%">
+</div>
 
 **Alur Data:**
 1. **User** berinteraksi dengan **View** (LoginForm, Dashboard, dll)
@@ -1307,7 +1250,7 @@ Program EduShare menggunakan berbagai library dan framework untuk mendukung fung
 | **hibernate-commons-annotations** | 7.0.3.Final | Anotasi umum untuk Hibernate |
 | **jakarta.persistence-api** | 3.1.0 | API standar JPA untuk persistence operations |
 
-### 🔄 Supporting Libraries
+### 🔄 Libraries Pendukung
 
 | Library | Versi | Fungsi |
 |---------|-------|--------|
@@ -1334,13 +1277,6 @@ Program EduShare menggunakan berbagai library dan framework untuk mendukung fung
 | **jaxb-runtime** | 4.0.2 | Runtime for JAXB |
 | **istack-commons-runtime** | 4.2.0 | Common utilities untuk JAXB |
 | **txw2** | 4.0.2 | Typed XML writer |
-
-### 📋 Dependency Management
-
-Semua library di atas dikelola melalui:
-- **Build Path** di NetBeans IDE
-- Library JAR files disimpan dalam project structure
-- Dependencies resolved secara otomatis saat compile
 
 ### 🎯 Konfigurasi Utama
 
@@ -1377,13 +1313,6 @@ Semua library di atas dikelola melalui:
 </persistence-unit>
 ```
 
-### 💡 Alasan Pemilihan Libraries
-
-1. **Hibernate/JPA**: Menyederhanakan operasi database dengan ORM
-2. **FlatLaf**: Memberikan tampilan modern dan profesional pada GUI
-3. **MySQL Connector**: Reliable dan well-supported untuk koneksi database
-4. **Jakarta EE**: Standar industry untuk enterprise Java applications
-
 </details>
 
 ## 📲 Penggunaan Program
@@ -1395,13 +1324,15 @@ Berikut adalah panduan lengkap penggunaan program EduShare untuk setiap jenis pe
 <details>
 <summary><strong>1. Halaman Login</strong></summary>
 
-![Login](Login.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/18abd24b-b5b3-4d39-8d49-a3b80753bcb4" alt="" width="500px">
+</div>
 
 Halaman login adalah tampilan pertama yang muncul saat program dijalankan. Pada halaman ini:
 - **Field Email**: Masukkan email yang telah terdaftar
 - **Field Password**: Masukkan password akun
 - **Tombol "Masuk"**: Klik untuk login ke sistem
-- **Link "Belum punya akun? Daftar disini"**: Klik untuk membuka form registrasi
+- **Link "Ingin Berdonasi? Daftar sekarang"**: Klik untuk membuka form registrasi
 
 **Validasi Login:**
 - Sistem akan memvalidasi email dan password
@@ -1413,10 +1344,12 @@ Halaman login adalah tampilan pertama yang muncul saat program dijalankan. Pada 
 <details>
 <summary><strong>2. Dialog Login Berhasil</strong></summary>
 
-![Dialog Login Berhasil](Dialog_Login_Berhasil.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/e0929a06-8803-4b9e-9784-e7af0de2f557" alt="" width="500px">
+</div>
 
 Setelah berhasil login, sistem akan menampilkan dialog konfirmasi:
-- Menampilkan pesan "Login berhasil sebagai [Role]"
+- Menampilkan pesan "Login berhasil sebagai [Jenis User][Nama Pengguna]"
 - Klik "OK" untuk melanjutkan ke dashboard
 
 </details>
@@ -1424,44 +1357,52 @@ Setelah berhasil login, sistem akan menampilkan dialog konfirmasi:
 <details>
 <summary><strong>3. Dialog Login Gagal</strong></summary>
 
-![Dialog Login Gagal](Dialog_Login_Gagal.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/dc01d0fc-65a9-4249-8bc2-3d2716282fec" alt="" width="500px">
+</div>
 
 Jika login gagal, sistem akan menampilkan pesan error:
 - "Email atau password salah"
-- Klik "OK" dan coba login kembali dengan kredensial yang benar
+- Klik "OK" dan coba login kembali dengan benar
 
 </details>
 
 <details>
 <summary><strong>4. Halaman Register</strong></summary>
 
-![Register](Register.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/10f55db4-067b-46cb-8c50-08e0affad0f8" alt="" width="500px">
+</div>
 
 Halaman registrasi untuk membuat akun baru sebagai Donatur:
 - **Field Nama**: Masukkan nama lengkap
 - **Field Email**: Masukkan email valid (akan digunakan untuk login)
-- **Field Password**: Masukkan password (minimal 6 karakter)
+- **Field Password**: Masukkan password
 - **Field Nomor HP**: Masukkan nomor telepon aktif
-- **Klik "Selanjutnya"** untuk melanjutkan ke halaman input alamat
+- **Klik "Selanjutnya"** untuk melanjutkan ke dialog input alamat
 
 </details>
 
 <details>
 <summary><strong>5. Register - Input Alamat</strong></summary>
 
-![Register Input Alamat](RegisterInput_Alamat.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/4b9da1cd-0c19-4099-9c4d-d3f5b82b0583" alt="" width="500px">
+</div>
 
 Setelah mengisi data pribadi, lanjutkan dengan mengisi alamat:
 - **Field Alamat**: Masukkan alamat lengkap tempat tinggal
-- **Tombol "Daftar"**: Klik untuk menyelesaikan proses registrasi
-- **Tombol "Kembali"**: Kembali ke halaman sebelumnya jika ingin mengubah data
+- **Tombol "OK"**: Klik untuk menyelesaikan proses registrasi
+- **Tombol "Cancel"**: Kembali ke halaman sebelumnya jika ingin mengubah data
 
 </details>
 
 <details>
 <summary><strong>6. Register Berhasil</strong></summary>
 
-![Register Berhasil](Register_Berhasil.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/84c989f4-8c00-4f52-b6b7-0b2ac70290ba" alt="" width="500px">
+</div>
 
 Setelah berhasil mendaftar, sistem akan menampilkan konfirmasi:
 - Pesan "Registrasi berhasil! Silakan login"
@@ -1475,7 +1416,9 @@ Setelah berhasil mendaftar, sistem akan menampilkan konfirmasi:
 <details>
 <summary><strong>1. Dashboard Admin</strong></summary>
 
-![Admin Dashboard](AdminDashboard_Admin.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/e3661763-2f10-4a8b-b480-e83423b3c808" alt="" width="500px">
+</div>
 
 Dashboard utama untuk Admin menampilkan:
 - **Menu Sidebar Kiri**:
@@ -1493,7 +1436,9 @@ Dashboard utama untuk Admin menampilkan:
 <details>
 <summary><strong>2. Manajemen Sekolah</strong></summary>
 
-![Admin Manajemen Sekolah](AdminManajemen_Sekolah.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2e095afc-b78f-492e-8a63-ad3d8f99d31e" alt="" width="500px">
+</div>
 
 Halaman untuk mengelola data sekolah:
 - **Tabel Daftar Sekolah**: Menampilkan semua sekolah yang terdaftar dengan informasi:
@@ -1515,7 +1460,9 @@ Halaman untuk mengelola data sekolah:
 <details>
 <summary><strong>3. Tambah Sekolah</strong></summary>
 
-![Admin Manajemen Sekolah Tambah Sekolah](AdminManajemen_SekolahTambah_Sekolah.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c9e849d0-e521-40cb-8c34-2960fd935e76" alt="" width="500px">
+</div>
 
 Dialog untuk menambahkan sekolah baru:
 - **Field Nama Sekolah**: Nama lengkap sekolah
@@ -1533,7 +1480,9 @@ Dialog untuk menambahkan sekolah baru:
 <details>
 <summary><strong>4. Detail Sekolah</strong></summary>
 
-![Admin Manajemen Sekolah Detail Sekolah](AdminManajemen_SekolahDetail_Sekolah.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c4a8085e-c749-4635-9422-9623f3dc0b5a" alt="" width="500px">
+</div>
 
 Dialog menampilkan informasi detail sekolah:
 - Semua informasi sekolah ditampilkan dalam format read-only
@@ -1545,7 +1494,9 @@ Dialog menampilkan informasi detail sekolah:
 <details>
 <summary><strong>5. Konfirmasi Hapus Sekolah</strong></summary>
 
-![Admin Manajemen Sekolah Konfirmasi Menghapus](AdminManajemen_SekolahKonfirmasi_Menghapus.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0f4a2068-fb3b-42f5-b7c4-561e4b80ceff" alt="" width="500px">
+</div>
 
 Dialog konfirmasi sebelum menghapus data sekolah:
 - Pesan: "Apakah Anda yakin ingin menghapus sekolah ini?"
@@ -1559,7 +1510,9 @@ Dialog konfirmasi sebelum menghapus data sekolah:
 <details>
 <summary><strong>6. Refresh Data Sekolah</strong></summary>
 
-![Admin Manajemen Sekolah Refresh](AdminManajemen_SekolahRefresh.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/b2bb3e3c-9a26-4dd4-a0b3-1aa1e404fc5d" alt="" width="500px">
+</div>
 
 Setelah klik tombol refresh:
 - Data tabel dimuat ulang dari database
@@ -1571,7 +1524,9 @@ Setelah klik tombol refresh:
 <details>
 <summary><strong>7. Manajemen Donatur</strong></summary>
 
-![Admin Manajemen Donatur](AdminManajemen_Donatur.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a000b6e7-2d54-4954-a23d-083564616e4f" alt="" width="500px">
+</div>
 
 Halaman untuk mengelola data donatur:
 - **Tabel Daftar Donatur**: Menampilkan semua donatur terdaftar
@@ -1590,7 +1545,9 @@ Halaman untuk mengelola data donatur:
 <details>
 <summary><strong>8. Profil Donatur</strong></summary>
 
-![Admin Manajemen Donatur Profil Donatur](AdminManajemen_DonaturProfil_Donatur.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2e5075fa-1092-423b-b9fd-611f44fbd849" alt="" width="500px">
+</div>
 
 Dialog menampilkan profil lengkap donatur:
 - Informasi pribadi donatur
@@ -1604,7 +1561,9 @@ Dialog menampilkan profil lengkap donatur:
 <details>
 <summary><strong>9. Manajemen Donasi</strong></summary>
 
-![Admin Manajemen Donasi](AdminManajemen_Donasi.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/96188ef9-40d7-4913-b952-cf18acbc94dc" alt="" width="500px">
+</div>
 
 Halaman untuk verifikasi dan kelola donasi:
 - **Tabel Daftar Donasi**: Menampilkan semua transaksi donasi
@@ -1625,7 +1584,9 @@ Halaman untuk verifikasi dan kelola donasi:
 <details>
 <summary><strong>10. Detail Donasi</strong></summary>
 
-![Admin Detail Donasi](AdminDetail_Donasi.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/9d0d9b3e-3b50-4628-8bcf-7bc0c7e35ae6" alt="" width="500px">
+</div>
 
 Dialog menampilkan detail lengkap donasi:
 - Informasi donatur
@@ -1642,7 +1603,9 @@ Dialog menampilkan detail lengkap donasi:
 <details>
 <summary><strong>11. Manajemen Dokumen</strong></summary>
 
-![Admin Manajemen Dokumen](AdminManajemen_Dokumen.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/834481d4-15fe-4f1c-9c3e-ed487c81fc92" alt="" width="500px">
+</div>
 
 Halaman untuk verifikasi dokumen sekolah:
 - **Tabel Daftar Dokumen**: Menampilkan dokumen yang diunggah sekolah
@@ -1661,7 +1624,9 @@ Halaman untuk verifikasi dokumen sekolah:
 <details>
 <summary><strong>12. Detail Kebutuhan Sekolah</strong></summary>
 
-![Admin Manajemen Dokumen Detail Kebutuhan Sekolah](AdminManajemen_DokumenDetail_Kebutuhan_Sekolah.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/4c56d452-65c8-46e7-80cd-c679b8028e62" alt="" width="500px">
+</div>
 
 Dialog menampilkan detail kebutuhan sekolah yang terkait dengan dokumen:
 - Daftar kebutuhan sekolah
@@ -1679,7 +1644,9 @@ Dialog menampilkan detail kebutuhan sekolah yang terkait dengan dokumen:
 <details>
 <summary><strong>1. Dashboard Donatur</strong></summary>
 
-![Donatur Dashboard Donatur](DonaturDashboard_Donatur.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/3cbdf320-478a-484d-bfbd-1f5844455dcd" alt="" width="500px">
+</div>
 
 Dashboard utama untuk Donatur menampilkan:
 - **Menu Sidebar Kiri**:
@@ -1696,7 +1663,9 @@ Dashboard utama untuk Donatur menampilkan:
 <details>
 <summary><strong>2. Daftar Sekolah</strong></summary>
 
-![Donatur Daftar Sekolah](DonaturDaftar_Sekolah.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/50730c33-7a9e-400d-b411-22ee019c6615" alt="" width="500px">
+</div>
 
 Halaman untuk menjelajahi sekolah yang membutuhkan donasi:
 - **Tabel Daftar Sekolah**: Menampilkan sekolah yang telah diverifikasi
@@ -1716,7 +1685,9 @@ Halaman untuk menjelajahi sekolah yang membutuhkan donasi:
 <details>
 <summary><strong>3. Detail Sekolah</strong></summary>
 
-![Donatur Daftar Sekolah Detail](DonaturDaftar_SekolahDetail.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/327db182-11bd-442a-a563-ce20c27da86b" alt="" width="500px">
+</div>
 
 Dialog menampilkan detail lengkap sekolah:
 - Informasi sekolah (Nama, NPSN, Alamat, Kategori)
@@ -1734,7 +1705,9 @@ Dialog menampilkan detail lengkap sekolah:
 <details>
 <summary><strong>4. Input Nilai Donasi</strong></summary>
 
-![Donatur Daftar Sekolah Detail Input Nilai Donasi](DonaturDaftar_SekolahDetailInput_Nilai_Donasi.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/dc7740b2-df11-4f36-9c3c-6597d5466363" alt="" width="500px">
+</div>
 
 Dialog untuk input detail donasi:
 - **Informasi Kebutuhan**: Nama alat dan deskripsi
@@ -1748,7 +1721,9 @@ Dialog untuk input detail donasi:
 <details>
 <summary><strong>5. Dialog Konfirmasi Donasi</strong></summary>
 
-![Donatur Daftar Sekolah detail Input Donasi Dialog Menunggu Konfirmasi](DonaturDaftar_SekolahdetailInput_DonasiDialog_Menunggu_Konfirmasi.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d52520b5-83d7-4c8b-90cb-92b6125dc552" alt="" width="500px">
+</div>
 
 Setelah klik tombol donasi, muncul dialog konfirmasi:
 - Pesan: "Donasi Anda sedang menunggu konfirmasi dari Admin"
@@ -1761,7 +1736,9 @@ Setelah klik tombol donasi, muncul dialog konfirmasi:
 <details>
 <summary><strong>6. Riwayat Donasi</strong></summary>
 
-![Donatur Riwayat Donasi](DonaturRiwayat_Donasi.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/cb220315-b191-4766-9e00-705a98d692e6" alt="" width="500px">
+</div>
 
 Halaman menampilkan riwayat semua donasi yang telah dilakukan:
 - **Tabel Riwayat Donasi**:
@@ -1781,7 +1758,9 @@ Halaman menampilkan riwayat semua donasi yang telah dilakukan:
 <details>
 <summary><strong>1. Dashboard Pihak Sekolah</strong></summary>
 
-![Sekolah Dashboard Pihak Sekolah](SekolahDashboard_Pihak_Sekolah.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/84d5452a-1a9f-467d-a267-737ddd6413d9" alt="" width="500px">
+</div>
 
 Dashboard utama untuk Pihak Sekolah:
 - **Menu Sidebar Kiri**:
@@ -1797,7 +1776,9 @@ Dashboard utama untuk Pihak Sekolah:
 <details>
 <summary><strong>2. Manajemen Kebutuhan</strong></summary>
 
-![Sekolah Manajemen Kebutuhan](SekolahManajemen_Kebutuhan.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5a0d4f97-8083-4828-a441-979647d18907" alt="" width="500px">
+</div>
 
 Halaman untuk mengelola kebutuhan sekolah:
 - **Tabel Daftar Kebutuhan**:
@@ -1818,7 +1799,9 @@ Halaman untuk mengelola kebutuhan sekolah:
 <details>
 <summary><strong>3. Tambah Kebutuhan</strong></summary>
 
-![Sekolah Manajemen Kebutuhan Tambah Kebutuhan](SekolahManajemen_KebutuhanTambah_Kebutuhan.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ef4cfdc7-4b3e-4365-8cc2-31b9aa47224c" alt="" width="500px">
+</div>
 
 Dialog untuk menambahkan kebutuhan baru:
 - **Field Nama Alat**: Nama alat pendidikan yang dibutuhkan
@@ -1833,7 +1816,9 @@ Dialog untuk menambahkan kebutuhan baru:
 <details>
 <summary><strong>4. Dialog Berhasil Menambah Kebutuhan</strong></summary>
 
-![Sekolah Manajemen Kebutuhan Tambah Kebutuhan Dialog Berhasil Ditambahkan](SekolahManajemen_KebutuhanTambah_KebutuhanDialog_Berhasil_Ditambahkan.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/6c5ce17e-d033-456c-b9cb-70662da51009" alt="" width="500px">
+</div>
 
 Setelah berhasil menambah kebutuhan:
 - Dialog konfirmasi: "Kebutuhan berhasil ditambahkan!"
@@ -1845,7 +1830,9 @@ Setelah berhasil menambah kebutuhan:
 <details>
 <summary><strong>5. Edit Kebutuhan</strong></summary>
 
-![Sekolah Manajemen Kebutuhan Edit Kebutuhan](SekolahManajemen_KebutuhanEdit_Kebutuhan.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/6d12e20b-6bc4-46bd-b6aa-c90d5fe2ee90" alt="" width="500px">
+</div>
 
 Dialog untuk mengedit kebutuhan yang sudah ada:
 - Form ter-isi dengan data kebutuhan yang dipilih
@@ -1858,7 +1845,9 @@ Dialog untuk mengedit kebutuhan yang sudah ada:
 <details>
 <summary><strong>6. Konfirmasi Hapus Kebutuhan</strong></summary>
 
-![Sekolah Manajemen Kebutuhan Konfirmasi Menghapus](SekolahManajemen_KebutuhanKonfirmasi_Menghapus.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/29f152da-beea-448d-b7a4-7bbdbc8c396c" alt="" width="500px">
+</div>
 
 Dialog konfirmasi sebelum menghapus kebutuhan:
 - Pesan: "Apakah Anda yakin ingin menghapus kebutuhan ini?"
@@ -1870,7 +1859,9 @@ Dialog konfirmasi sebelum menghapus kebutuhan:
 <details>
 <summary><strong>7. Dialog Berhasil Menghapus</strong></summary>
 
-![Sekolah Manajemen Kebutuhan Dialog Berhasil Dihapus](SekolahManajemen_KebutuhanDialog_Berhasil_Dihapus.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/86b807a4-42dc-410c-8647-c88256f3f2eb" alt="" width="500px">
+</div>
 
 Setelah berhasil menghapus kebutuhan:
 - Dialog konfirmasi: "Kebutuhan berhasil dihapus!"
@@ -1882,7 +1873,9 @@ Setelah berhasil menghapus kebutuhan:
 <details>
 <summary><strong>8. Riwayat Donasi Masuk</strong></summary>
 
-![Sekolah Riwayat Donasi](SekolahRiwayat_Donasi.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/aedc9fcc-9347-449a-8d3e-502ddc4da845" alt="" width="500px">
+</div>
 
 Halaman menampilkan riwayat donasi yang diterima sekolah:
 - **Tabel Riwayat Donasi**:
@@ -1903,7 +1896,9 @@ Halaman menampilkan riwayat donasi yang diterima sekolah:
 <details>
 <summary><strong>1. Konfirmasi Logout</strong></summary>
 
-![Semua Role Konfirmasi Logout](Semua_RoleKonfirmasi_Logout.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/9c848ca2-1c5a-43a7-9c2f-ef807cb887f7" alt="" width="500px">
+</div>
 
 Saat klik tombol Logout:
 - Dialog konfirmasi: "Apakah Anda yakin ingin keluar?"
@@ -1915,7 +1910,9 @@ Saat klik tombol Logout:
 <details>
 <summary><strong>2. Dialog Logout Berhasil</strong></summary>
 
-![Semua Role Dialog Logout Berhasil](Semua_RoleDialog_Logout_Berhasil.png)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/66c090e8-032b-4f97-9fb7-f9bfcb3e333c" alt="" width="500px">
+</div>
 
 Setelah konfirmasi logout:
 - Dialog: "Logout berhasil. Sampai jumpa, [Nama User]"
