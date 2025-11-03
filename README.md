@@ -12,12 +12,12 @@
 - [🖥️ Implementasi OOP](#️-implementasi-oop)
 - [📂 Struktur Packages](#-struktur-packages)
 - [📚 Libraries](#-libraries)
-- [👨‍💻 Panduan Penggunaan](#-panduan-penggunaan)
+- [👨‍💻 Penggunaan Program](#-penggunaan-program)
 
 ## 👥 Profil
 
 <div align="center">
-<strong>Kelompok 3</strong><br><br>
+<strong>Kelompok The Hood Council</strong><br><br>
 
 
 | Ahmad Sepriza | Ahmad Dani | Aris Candra Muzaffar | Moreno Ferdinand Farhantino |
@@ -27,26 +27,14 @@
 </div>
 
 ## 🚀 Deskripsi Program
-Program ini adalah aplikasi sederhana yang dikembangkan dengan bahasa pemrograman Python untuk layanan rental peralatan fotografi. Berikut ini adalah komponen utamanya:
 
 
 ## 📖 Fitur Program
 
-<details>
-  <summary>1. Flowchart Menu Utama</summary>
-  <img src="https://github.com/user-attachments/assets/15de16c4-8f34-432b-bce1-97a30a771718" alt="">
-</details>
-
 
 ## 🖥️ Implementasi OOP
 <details>
-<summary><h3>Menu Utama</h3></summary>
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/6d97fbaa-ff68-41eb-a34b-67ef45aeb1a6" alt="Menu Utama Image" width="500px">
-</div>
-
-<p align="justify">Gambar di atas adalah tampilan yang akan menyambut pengguna untuk pertama kalinya setiap program dijalankan, yaitu menu utama. Menu utama terdapat 3 pilihan.</p>
+<summary><h3></h3></summary>
 
 </details>
 
@@ -54,7 +42,7 @@ Program ini adalah aplikasi sederhana yang dikembangkan dengan bahasa pemrograma
 
 ## 📚 Libraries
 
-## 👨‍💻 Panduan Penggunaan
+## 👨‍💻 Penggunaan Program
 
 ---
 > [!NOTE]
@@ -63,4 +51,4 @@ Program ini adalah aplikasi sederhana yang dikembangkan dengan bahasa pemrograma
 
 ---
 [⬆️ Kembali ke Awal](#top)
-<img src="https://github.com/user-attachments/assets/5a226224-062e-447a-8e3e-1c97d76ea9da" alt="" width="100%">
+<img src="" alt="Footer Readme" width="100%">
