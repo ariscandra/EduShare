@@ -1,5 +1,5 @@
 <a name="top"></a>
-<img src="" alt="Header Atas" width="100%">
+<img src="https://github.com/user-attachments/assets/ea632656-6bb6-4c2d-a4c8-15baa6bf9137" alt="Header Atas" width="100%">
 
 <p align="center"><strong>
     Selamat Datang di Panduan Program Sistem Donasi Alat Pendidikan EduShare!  
@@ -1932,4 +1932,4 @@ Setelah konfirmasi logout:
 
 ---
 [⬆️ Kembali ke Awal](#top)
-<img src="" alt="Footer Readme" width="100%">
+<img src="https://github.com/user-attachments/assets/20faea5d-0da9-42e6-94df-a6f9a6879d0f" alt="Footer Readme" width="100%">
