@@ -1404,10 +1404,7 @@ Setelah mengisi data pribadi, lanjutkan dengan mengisi alamat:
   <img src="https://github.com/user-attachments/assets/84c989f4-8c00-4f52-b6b7-0b2ac70290ba" alt="" width="500px">
 </div>
 
-Setelah berhasil mendaftar, sistem akan menampilkan konfirmasi:
-- Pesan "Registrasi berhasil! Silakan login"
-- Akun telah terdaftar sebagai Donatur
-- Klik "OK" dan akan diarahkan kembali ke halaman login
+Setelah berhasil mendaftar, sistem akan mengalihkan ke laman login.
 
 </details>
 
@@ -1450,7 +1447,7 @@ Halaman untuk mengelola data sekolah:
   - Kategori
   - Status Kebutuhan
 - **Tombol "Tambah Sekolah"**: Menambah sekolah baru
-- **Tombol "Detail"**: Melihat informasi lengkap sekolah
+- **Tombol "Lihat Detail"**: Melihat informasi lengkap sekolah
 - **Tombol "Edit"**: Mengubah data sekolah
 - **Tombol "Hapus"**: Menghapus data sekolah (dengan konfirmasi)
 - **Tombol "Refresh"**: Memuat ulang data dari database
@@ -1471,9 +1468,8 @@ Dialog untuk menambahkan sekolah baru:
 - **Field Kecamatan**: Nama kecamatan
 - **Field Kabupaten**: Nama kabupaten/kota
 - **Dropdown Kategori**: Pilih kategori (SD, SMP, SMA, SMK)
-- **Dropdown Status Kebutuhan**: Status kebutuhan sekolah
-- **Tombol "Simpan"**: Menyimpan data sekolah baru
-- **Tombol "Batal"**: Membatalkan penambahan
+- **Fields Data Akun Sekolah**: informasi mengenai akun pihak sekolah untuk keperluan login ke sistem
+- **Tombol "Tambah Sekolah"**: Menyimpan data sekolah baru dan Pihak sekolah baru
 
 </details>
 
@@ -1487,7 +1483,6 @@ Dialog untuk menambahkan sekolah baru:
 Dialog menampilkan informasi detail sekolah:
 - Semua informasi sekolah ditampilkan dalam format read-only
 - Dapat melihat data lengkap sekolah
-- **Tombol "Tutup"**: Menutup dialog
 
 </details>
 
@@ -1503,7 +1498,6 @@ Dialog konfirmasi sebelum menghapus data sekolah:
 - **Tombol "Yes"**: Konfirmasi penghapusan
 - **Tombol "No"**: Batalkan penghapusan
 
-**Peringatan**: Menghapus sekolah akan menghapus semua data terkait (kebutuhan, dokumen, dll)
 
 </details>
 
@@ -1517,7 +1511,6 @@ Dialog konfirmasi sebelum menghapus data sekolah:
 Setelah klik tombol refresh:
 - Data tabel dimuat ulang dari database
 - Menampilkan data terbaru
-- Loading indicator muncul saat proses refresh
 
 </details>
 
@@ -1536,9 +1529,7 @@ Halaman untuk mengelola data donatur:
   - Email
   - Nomor HP
   - Total Donasi
-- **Tombol "Detail Profil"**: Melihat profil lengkap donatur
-- **Tombol "Hapus"**: Menghapus data donatur
-- **Search Bar**: Mencari donatur berdasarkan nama atau email
+- **Tombol "Lihat Detail"**: Melihat profil lengkap donatur
 
 </details>
 
@@ -1552,9 +1543,8 @@ Halaman untuk mengelola data donatur:
 Dialog menampilkan profil lengkap donatur:
 - Informasi pribadi donatur
 - Alamat lengkap
-- Riwayat donasi
 - Total donasi yang telah diberikan
-- **Tombol "Tutup"**: Menutup dialog
+- **Tombol "Oke"**: Menutup dialog
 
 </details>
 
@@ -1571,13 +1561,10 @@ Halaman untuk verifikasi dan kelola donasi:
   - ID Donasi
   - Nama Donatur
   - Sekolah Tujuan
-  - Kebutuhan
   - Jumlah Donasi
   - Metode Pembayaran
   - Status Donasi
-- **Tombol "Detail"**: Melihat detail lengkap donasi
-- **Tombol "Verifikasi"**: Memverifikasi donasi yang pending
-- **Filter Status**: Filter berdasarkan status donasi
+- **Tombol "Lihat Detail"**: Melihat detail lengkap donasi
 
 </details>
 
@@ -1591,12 +1578,9 @@ Halaman untuk verifikasi dan kelola donasi:
 Dialog menampilkan detail lengkap donasi:
 - Informasi donatur
 - Informasi sekolah penerima
-- Detail kebutuhan yang dipenuhi
-- Jumlah dan metode donasi
+- Jumlah donasi
 - Tanggal donasi
 - Status donasi
-- **Tombol "Verifikasi"**: Untuk verifikasi donasi (jika masih pending)
-- **Tombol "Tutup"**: Menutup dialog
 
 </details>
 
@@ -1610,14 +1594,13 @@ Dialog menampilkan detail lengkap donasi:
 Halaman untuk verifikasi dokumen sekolah:
 - **Tabel Daftar Dokumen**: Menampilkan dokumen yang diunggah sekolah
 - **Informasi yang ditampilkan**:
+  - ID Dokumen
   - Nama Sekolah
-  - Jenis Dokumen
-  - Nama File
-  - Tanggal Upload
+  - Nama Kebutuhan
+  - Jumlah
+  - Prioritas
   - Status Verifikasi
 - **Tombol "Lihat Detail"**: Melihat dokumen dan kebutuhan terkait
-- **Tombol "Verifikasi"**: Menyetujui dokumen
-- **Tombol "Tolak"**: Menolak dokumen dengan catatan
 
 </details>
 
@@ -1634,8 +1617,9 @@ Dialog menampilkan detail kebutuhan sekolah yang terkait dengan dokumen:
 - Prioritas kebutuhan
 - Jumlah yang dibutuhkan
 - Keterangan tambahan
+- Lihat Dokumen Pendukung
 - **Tombol "Verifikasi"**: Verifikasi kebutuhan
-- **Tombol "Tutup"**: Menutup dialog
+- **Tombol "Tolak"**: Dokumen ditolak
 
 </details>
 
@@ -1652,7 +1636,6 @@ Dashboard utama untuk Donatur menampilkan:
 - **Menu Sidebar Kiri**:
   - Dashboard: Tampilan ringkasan aktivitas
   - Daftar Sekolah: Menjelajahi sekolah untuk didonasi
-  - Donasi Saya: Melihat donasi aktif
   - Riwayat Donasi: Melihat riwayat semua donasi
 - **Panel Konten**: Menampilkan ringkasan donasi dan aktivitas terbaru
 - **Informasi User**: Nama donatur di kanan atas
@@ -1671,14 +1654,10 @@ Halaman untuk menjelajahi sekolah yang membutuhkan donasi:
 - **Tabel Daftar Sekolah**: Menampilkan sekolah yang telah diverifikasi
 - **Informasi yang ditampilkan**:
   - Nama Sekolah
-  - NPSN
-  - Alamat
-  - Kabupaten
-  - Kategori (SD/SMP/SMA/SMK)
-  - Status Kebutuhan
+  - Nama Alat
+  - Jumlah
+  - Keterangan
 - **Tombol "Lihat Detail"**: Melihat detail sekolah dan kebutuhan
-- **Search Bar**: Mencari sekolah berdasarkan nama atau lokasi
-- **Filter**: Filter berdasarkan kategori atau kabupaten
 
 </details>
 
@@ -1694,11 +1673,11 @@ Dialog menampilkan detail lengkap sekolah:
 - **Daftar Kebutuhan**: Tabel menampilkan kebutuhan sekolah dengan:
   - Nama Alat
   - Jumlah yang dibutuhkan
+  - Jumlah yang sudah terkumpul
   - Prioritas
   - Deskripsi
   - Status
-- **Tombol "Donasi"**: Untuk memberikan donasi pada kebutuhan tertentu
-- **Tombol "Tutup"**: Menutup dialog
+- **Tombol "Donasi"**: Untuk memberikan donasi
 
 </details>
 
@@ -1712,9 +1691,9 @@ Dialog menampilkan detail lengkap sekolah:
 Dialog untuk input detail donasi:
 - **Informasi Kebutuhan**: Nama alat dan deskripsi
 - **Field Jumlah Donasi**: Masukkan nilai atau jumlah donasi
-- **Dropdown Metode Pembayaran**: Pilih metode (Transfer Bank, E-Wallet, dll)
-- **Tombol "Donasi"**: Konfirmasi donasi
-- **Tombol "Batal"**: Batalkan proses donasi
+- **Dropdown Metode Pembayaran**: Pilih metode (Transfer Bank, QRIS, Cash)
+- **Tombol "OK"**: Konfirmasi donasi
+- **Tombol "Cancel"**: Batalkan proses donasi
 
 </details>
 
@@ -1727,8 +1706,6 @@ Dialog untuk input detail donasi:
 
 Setelah klik tombol donasi, muncul dialog konfirmasi:
 - Pesan: "Donasi Anda sedang menunggu konfirmasi dari Admin"
-- Informasi donasi yang telah dikirim
-- Status: Menunggu Verifikasi
 - **Tombol "OK"**: Kembali ke daftar sekolah
 
 </details>
@@ -1742,14 +1719,11 @@ Setelah klik tombol donasi, muncul dialog konfirmasi:
 
 Halaman menampilkan riwayat semua donasi yang telah dilakukan:
 - **Tabel Riwayat Donasi**:
-  - Tanggal Donasi
   - Sekolah Tujuan
   - Kebutuhan yang Dipenuhi
   - Jumlah Donasi
+  - Tanggal Donasi
   - Status Donasi (Pending/Diverifikasi/Selesai/Ditolak)
-- **Tombol "Lihat Detail"**: Melihat detail donasi
-- **Filter Status**: Filter berdasarkan status donasi
-- **Export**: Export riwayat ke PDF atau Excel
 
 </details>
 
@@ -1783,16 +1757,14 @@ Dashboard utama untuk Pihak Sekolah:
 Halaman untuk mengelola kebutuhan sekolah:
 - **Tabel Daftar Kebutuhan**:
   - ID Kebutuhan
-  - Nama Alat
+  - Nama Kebutuhan
   - Jumlah
-  - Prioritas (Rendah/Sedang/Tinggi)
-  - Deskripsi
-  - Tanggal Pengajuan
   - Status
-- **Tombol "Tambah Kebutuhan"**: Menambah kebutuhan baru
+  - Prioritas
+  - Deskripsi
+- **Tombol "Buat Kebutuhan"**: Menambah kebutuhan baru
 - **Tombol "Edit"**: Mengubah data kebutuhan
 - **Tombol "Hapus"**: Menghapus kebutuhan
-- **Tombol "Refresh"**: Memuat ulang data
 
 </details>
 
@@ -1808,7 +1780,10 @@ Dialog untuk menambahkan kebutuhan baru:
 - **Field Jumlah**: Jumlah alat yang dibutuhkan
 - **Dropdown Prioritas**: Pilih tingkat prioritas
 - **Field Deskripsi**: Penjelasan detail kebutuhan
-- **Tombol "Simpan"**: Menyimpan kebutuhan baru
+- **Total Kebutuhan(Dalam Rupiah)**: Total Kebutuhan sekolah dalam bentuk uang
+- **Target Donasi(Dalam Rupiah)**: Target donasi yang diperlukan sekolah, apakah sepenuhnya perlu donasi atau ada uang yang sudah terkumpul
+- **Field Upload Dokumen**: Dokumen Pendukung agar dapat diverifikasi admin
+- **Tombol "Ajukan Kebutuhan"**: Menyimpan kebutuhan baru
 - **Tombol "Batal"**: Membatalkan penambahan
 
 </details>
@@ -1879,15 +1854,11 @@ Setelah berhasil menghapus kebutuhan:
 
 Halaman menampilkan riwayat donasi yang diterima sekolah:
 - **Tabel Riwayat Donasi**:
-  - Tanggal Donasi
-  - Nama Donatur
+  - Nama Sekolah
   - Kebutuhan yang Dipenuhi
   - Jumlah Donasi
-  - Metode Pembayaran
+  - Tanggal Donasi
   - Status Donasi
-- **Tombol "Lihat Detail"**: Melihat detail donasi
-- **Filter**: Filter berdasarkan periode atau status
-- **Export**: Export data ke PDF atau Excel
 
 </details>
 
@@ -1903,7 +1874,7 @@ Halaman menampilkan riwayat donasi yang diterima sekolah:
 Saat klik tombol Logout:
 - Dialog konfirmasi: "Apakah Anda yakin ingin keluar?"
 - **Tombol "Yes"**: Konfirmasi logout
-- **Tombol "No"**: Batalkan dan tetap di dashboard
+- **Tombol "No"**: Batalkan dan tetap menggunakan sistem
 
 </details>
 
@@ -1918,14 +1889,13 @@ Setelah konfirmasi logout:
 - Dialog: "Logout berhasil. Sampai jumpa, [Nama User]"
 - Session user dihapus dari sistem
 - **Tombol "OK"**: Kembali ke halaman login
-- Aplikasi siap untuk login user berikutnya
 
 </details>
 
 ---
 > [!NOTE]
 > **🎉 Terimakasih! 🎉**
-> Kepada abang, mba, dan rekan semua yang sudah membantu kami dalam menyelesaikan proyek ini 🙏
+> Kepada abang, mba, dan semua rekan yang sudah membantu kami dalam menyelesaikan proyek ini 🙏
 
 ---
 [⬆️ Kembali ke Awal](#top)
