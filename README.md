@@ -1,9 +1,9 @@
 <a name="top"></a>
 <img src="" alt="Header Atas" width="100%">
 
-<p align="center">
+<p align="center"><strong>
     Selamat Datang di Panduan Program Sistem Donasi Alat Pendidikan EduShare!  
-</p>
+</strong></p>
 
 ## 📚 Daftar Isi
 - [👥 Profil](#-profil)
@@ -12,7 +12,7 @@
 - [🖥️ Implementasi OOP](#️-implementasi-oop)
 - [📂 Struktur Packages](#-struktur-packages)
 - [📚 Libraries](#-libraries)
-- [👨‍💻 Penggunaan Program](#-penggunaan-program)
+- [📲 Penggunaan Program](#-penggunaan-program)
 
 ## 👥 Profil
 
@@ -1386,7 +1386,7 @@ Semua library di atas dikelola melalui:
 
 </details>
 
-## 👨‍💻 Penggunaan Program
+## 📲 Penggunaan Program
 
 Berikut adalah panduan lengkap penggunaan program EduShare untuk setiap jenis pengguna.
 
